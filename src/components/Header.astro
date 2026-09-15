@@ -1,0 +1,119 @@
+---
+const navItems = [
+  { label: 'トップ', href: '/' },
+  { label: '教会について', href: '/about' },
+  { label: '礼拝案内', href: '/service' },
+  { label: '行事・お知らせ', href: '/news' },
+  { label: '説教アーカイブ', href: '/sermons' },
+  { label: '写真ギャラリー', href: '/gallery' },
+  { label: 'アクセス', href: '/access' },
+  { label: 'お問い合わせ', href: '/contact' },
+];
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">ライフチャーチ市原</a>
+
+    <button id="nav-toggle" class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav">
+      <ul>
+        {navItems.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('site-nav');
+  toggle?.addEventListener('click', () => {
+    const isOpen = nav?.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(!!isOpen));
+  });
+</script>
+
+<style>
+  .site-header {
+    background: var(--color-bg);
+    border-bottom: 3px solid var(--color-accent);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .logo {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-teal-dark);
+  }
+
+  .site-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav a {
+    color: var(--color-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .site-nav a:hover { color: var(--color-accent-dark); }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .nav-toggle span {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--color-teal-dark);
+  }
+
+  @media (max-width: 860px) {
+    .nav-toggle { display: flex; }
+
+    .site-nav {
+      display: none;
+      width: 100%;
+      order: 3;
+      margin-top: 16px;
+    }
+
+    .site-nav.is-open { display: block; }
+
+    .site-nav ul {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-name">ライフチャーチ市原</p>
+    <p class="footer-copy">&copy; {year} Life Church Ichihara</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-teal-dark);
+    color: #FBF7EC;
+    margin-top: 64px;
+  }
+
+  .footer-inner {
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .footer-name {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin: 0;
+  }
+</style>
