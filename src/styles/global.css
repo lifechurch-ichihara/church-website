@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root {
-  --color-bg: #FBF7EC;
-  --color-bg-alt: #F3ECDA;
+  --color-bg: #EAE6DC;
+  --color-bg-alt: #DED7C6;
+  --color-dark: #2A2A2E;
+  --color-dark-alt: #38383D;
   --color-text: #332B22;
-  --color-accent: #E8A544;
-  --color-accent-dark: #C7842A;
+  --color-text-on-dark: #EAE6DC;
+  --color-accent: #C9A24B;
+  --color-accent-dark: #A6822F;
   --color-teal: #2B6B76;
   --color-teal-dark: #1E4C54;
   --font-heading: 'Fredoka', sans-serif;
@@ -35,10 +38,10 @@ h1, h2, h3, h4 {
 p { margin: 0 0 1em; }
 
 a {
-  color: var(--color-teal);
+  color: var(--color-accent-dark);
   text-decoration: none;
 }
-a:hover { color: var(--color-teal-dark); }
+a:hover { color: var(--color-accent); }
 
 .container {
   max-width: var(--max-width);

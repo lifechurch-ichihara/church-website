@@ -1,21 +1,21 @@
 ---
 const navItems = [
-  { label: 'トップ', href: '/' },
-  { label: '教会について', href: '/about' },
-  { label: '礼拝案内', href: '/service' },
-  { label: '行事・お知らせ', href: '/news' },
-  { label: '説教アーカイブ', href: '/sermons' },
-  { label: '写真ギャラリー', href: '/gallery' },
-  { label: 'アクセス', href: '/access' },
-  { label: 'お問い合わせ', href: '/contact' },
+  { label: 'Início', href: '/' },
+  { label: 'Sobre', href: '/about' },
+  { label: 'Cultos', href: '/service' },
+  { label: 'Notícias', href: '/news' },
+  { label: 'Mensagens', href: '/sermons' },
+  { label: 'Galeria', href: '/gallery' },
+  { label: 'local', href: '/access' },
+  { label: 'Contato', href: '/contact' },
 ];
 ---
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="/" class="logo">ライフチャーチ市原</a>
+    <a href="/" class="logo">Life Church Ichihara</a>
 
-    <button id="nav-toggle" class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+    <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
@@ -40,7 +40,7 @@ const navItems = [
 
 <style>
   .site-header {
-    background: var(--color-bg);
+    background: var(--color-dark);
     border-bottom: 3px solid var(--color-accent);
     position: sticky;
     top: 0;
@@ -59,7 +59,7 @@ const navItems = [
     font-family: var(--font-heading);
     font-size: 1.35rem;
     font-weight: 700;
-    color: var(--color-teal-dark);
+    color: var(--color-accent);
   }
 
   .site-nav ul {
@@ -72,12 +72,12 @@ const navItems = [
   }
 
   .site-nav a {
-    color: var(--color-text);
+    color: var(--color-text-on-dark);
     font-weight: 500;
     font-size: 0.95rem;
   }
 
-  .site-nav a:hover { color: var(--color-accent-dark); }
+  .site-nav a:hover { color: var(--color-accent); }
 
   .nav-toggle {
     display: none;
@@ -96,7 +96,7 @@ const navItems = [
     display: block;
     height: 3px;
     border-radius: 2px;
-    background: var(--color-teal-dark);
+    background: var(--color-accent);
   }
 
   @media (max-width: 860px) {

@@ -2,66 +2,63 @@
 import Layout from '../layouts/Layout.astro';
 
 const news = [
-  { date: '2026.09.10', title: '秋の家族礼拝のお知らせ', href: '/news' },
-  { date: '2026.09.03', title: '子ども祝福式を行いました', href: '/news' },
-  { date: '2026.08.20', title: '夏期特別集会レポート', href: '/news' },
+  { date: '10.09.2026', title: 'Culto especial de família no outono', href: '/news' },
+  { date: '03.09.2026', title: 'Realizamos a cerimônia de bênção das crianças', href: '/news' },
+  { date: '20.08.2026', title: 'Relatório do encontro especial de verão', href: '/news' },
 ];
 ---
 
-<Layout title="トップ">
+<Layout title="Início">
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-inner">
-      <h1>あなたを、心から歓迎します</h1>
-      <p>ライフチャーチ市原は、誰もが安心して集える教会です。</p>
-      <a href="/service" class="btn">礼拝案内を見る</a>
+      <h1>Você é bem-vindo aqui</h1>
+      <p>A Life Church Ichihara é uma igreja onde todos podem se sentir em casa.</p>
+      <a href="/service" class="btn">Ver horários dos cultos</a>
     </div>
   </section>
 
-  <section class="section service-summary">
+  <section class="section section-light">
     <div class="container">
-      <h2>礼拝のご案内</h2>
+      <h2>Horário do Culto</h2>
       <div class="summary-grid">
         <div class="summary-card">
-          <p class="summary-label">日時</p>
-          <p class="summary-value">毎週日曜日 10:30〜</p>
+          <p class="summary-label">Data e hora</p>
+          <p class="summary-value">Todo domingo às 10h30</p>
         </div>
         <div class="summary-card">
-          <p class="summary-label">場所</p>
-          <p class="summary-value">千葉県市原市〇〇1-2-3</p>
+          <p class="summary-label">Endereço</p>
+          <p class="summary-value">Chiba-ken, Ichihara-shi, 〇〇1-2-3</p>
         </div>
       </div>
-      <a href="/service">詳しい礼拝案内はこちら</a>
+      <a href="/service">Ver detalhes dos cultos</a>
     </div>
   </section>
 
-  <section class="section pastor-message">
+  <section class="section section-dark">
     <div class="container message-grid">
-      <div>
-        <h2>牧師からのメッセージ</h2>
-        <p>
-          はじめまして。ライフチャーチ市原の牧師です。
-          ここに、教会の歩みや大切にしていることについての
-          メッセージを入れます。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section first-visit">
-    <div class="container">
-      <h2>はじめての方へ</h2>
+      <h2>Mensagem do Pastor</h2>
       <p>
-        服装は自由です。お子様連れも大歓迎です。
-        礼拝の流れや持ち物について、事前に知っておきたい方はこちらをご覧ください。
+        Seja bem-vindo! Aqui vamos compartilhar a caminhada da nossa igreja
+        e aquilo que consideramos mais importante para nossa família de fé.
       </p>
-      <a href="/about" class="btn btn-outline">教会について詳しく見る</a>
     </div>
   </section>
 
-  <section class="section news-preview">
+  <section class="section section-light">
     <div class="container">
-      <h2>お知らせ</h2>
+      <h2>Primeira Visita</h2>
+      <p>
+        Não é necessário se vestir formalmente. Crianças são muito bem-vindas.
+        Saiba mais sobre como funciona o culto antes de visitar.
+      </p>
+      <a href="/about" class="btn btn-outline">Saiba mais sobre a igreja</a>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <h2>Notícias</h2>
       <ul class="news-list">
         {news.map((item) => (
           <li>
@@ -70,15 +67,15 @@ const news = [
           </li>
         ))}
       </ul>
-      <a href="/news">お知らせ一覧を見る</a>
+      <a href="/news">Ver todas as notícias</a>
     </div>
   </section>
 
-  <section class="section access-preview">
+  <section class="section section-light">
     <div class="container">
-      <h2>アクセス</h2>
-      <p>千葉県市原市〇〇1-2-3(最寄駅から徒歩10分・駐車場あり)</p>
-      <a href="/access">地図・詳しいアクセスはこちら</a>
+      <h2>Como Chegar</h2>
+      <p>Chiba-ken, Ichihara-shi, 〇〇1-2-3 (10 min a pé da estação mais próxima, estacionamento disponível)</p>
+      <a href="/access">Ver mapa e detalhes</a>
     </div>
   </section>
 </Layout>
@@ -89,14 +86,14 @@ const news = [
     min-height: 60vh;
     display: flex;
     align-items: center;
-    background: url('/images/hero.jpg') center/cover no-repeat, var(--color-teal);
-    color: #fff;
+    background: url('/images/hero.jpg') center/cover no-repeat, var(--color-dark);
+    color: var(--color-text-on-dark);
   }
 
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(43,107,118,0.35), rgba(43,107,118,0.6));
+    background: linear-gradient(180deg, rgba(42,42,46,0.4), rgba(42,42,46,0.7));
   }
 
   .hero-inner {
@@ -107,8 +104,9 @@ const news = [
 
   .hero h1 {
     font-size: clamp(1.8rem, 4vw, 2.8rem);
-    max-width: 14ch;
+    max-width: 16ch;
     margin-bottom: 0.4em;
+    color: var(--color-accent);
   }
 
   .hero p {
@@ -119,7 +117,7 @@ const news = [
   .btn {
     display: inline-block;
     background: var(--color-accent);
-    color: var(--color-text);
+    color: var(--color-dark);
     font-weight: 600;
     padding: 12px 28px;
     border-radius: 999px;
@@ -130,12 +128,12 @@ const news = [
 
   .btn-outline {
     background: transparent;
-    border: 2px solid var(--color-teal);
-    color: var(--color-teal);
+    border: 2px solid var(--color-accent-dark);
+    color: var(--color-accent-dark);
   }
 
   .btn-outline:hover {
-    background: var(--color-teal);
+    background: var(--color-accent-dark);
     color: #fff;
   }
 
@@ -143,8 +141,22 @@ const news = [
     padding: 56px 0;
   }
 
-  .section:nth-child(even) {
-    background: var(--color-bg-alt);
+  .section-light {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .section-dark {
+    background: var(--color-dark-alt);
+    color: var(--color-text-on-dark);
+  }
+
+  .section-dark h2 {
+    color: var(--color-accent);
+  }
+
+  .section-dark a {
+    color: var(--color-accent);
   }
 
   .summary-grid {
@@ -163,7 +175,7 @@ const news = [
 
   .summary-label {
     font-size: 0.85rem;
-    color: var(--color-teal-dark);
+    color: var(--color-accent-dark);
     margin: 0 0 4px;
   }
 
@@ -171,6 +183,7 @@ const news = [
     font-weight: 600;
     font-size: 1.1rem;
     margin: 0;
+    color: var(--color-text);
   }
 
   .message-grid {
@@ -187,11 +200,11 @@ const news = [
     display: flex;
     gap: 16px;
     padding: 12px 0;
-    border-bottom: 1px solid var(--color-bg-alt);
+    border-bottom: 1px solid rgba(234,230,220,0.15);
   }
 
   .news-date {
-    color: var(--color-teal-dark);
+    color: var(--color-accent);
     font-size: 0.9rem;
     white-space: nowrap;
   }
