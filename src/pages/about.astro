@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const ministries = [
+  { role: 'Louvor', name: 'Nome do Líder', quote: 'Adorar a Deus com todo o coração.' },
+  { role: 'Mídia', name: 'Nome do Líder', quote: 'Levando a Palavra além das paredes da igreja.' },
+  { role: 'Crianças', name: 'Nome do Líder', quote: 'Ensinando os pequenos com muito amor.' },
+  { role: 'Juniores', name: 'Nome do Líder', quote: 'Construindo a próxima geração de fé.' },
+  { role: 'Recepção', name: 'Nome do Líder', quote: 'Todos são bem-vindos aqui.' },
+  { role: 'Intercessão', name: 'Nome do Líder', quote: 'Orando por cada família da igreja.' },
+];
+---
+
+<Layout title="Sobre a Igreja">
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <h1>Sobre a Igreja</h1>
+      <p>Conheça um pouco da nossa história e das pessoas que caminham conosco.</p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2>Nossa História</h2>
+      <p class="placeholder-text">
+        [Texto sobre a história da igreja será inserido aqui: quando e como a igreja
+        começou, os principais marcos e a visão que carregamos até hoje.]
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container pastor-grid">
+      <div class="photo-placeholder pastor-photo">Foto</div>
+      <div>
+        <h2>Nosso Pastor</h2>
+        <p class="placeholder-text">
+          [Nome do pastor e uma breve apresentação: sua trajetória, tempo à frente
+          da igreja e uma palavra de boas-vindas para os visitantes.]
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2>Nossos Ministérios</h2>
+      <div class="ministry-grid">
+        {ministries.map((m) => (
+          <div class="ministry-card">
+            <div class="photo-placeholder">Foto</div>
+            <p class="ministry-role">{m.role}</p>
+            <p class="ministry-name">{m.name}</p>
+            <p class="ministry-quote">"{m.quote}"</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <h2>Nossa Família</h2>
+      <div class="photo-placeholder group-photo">Foto do grupo</div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding-top: 64px;
+    padding-bottom: 40px;
+  }
+
+  .page-hero h1 {
+    color: var(--color-accent);
+  }
+
+  .section-light, .section-dark {
+    padding: 56px 0;
+  }
+
+  .section-light { background: var(--color-bg); color: var(--color-text); }
+  .section-dark { background: var(--color-dark-alt); color: var(--color-text-on-dark); }
+  .section-dark h2 { color: var(--color-accent); }
+
+  .placeholder-text {
+    max-width: 65ch;
+    opacity: 0.85;
+    font-style: italic;
+  }
+
+  .photo-placeholder {
+    background: rgba(201, 162, 75, 0.15);
+    border: 2px dashed var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    font-weight: 600;
+    border-radius: 12px;
+  }
+
+  .pastor-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .pastor-photo {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+  }
+
+  .ministry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .ministry-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .ministry-card .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 12px;
+  }
+
+  .ministry-role {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-accent-dark);
+    margin: 0 0 2px;
+  }
+
+  .ministry-name {
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+
+  .ministry-quote {
+    font-size: 0.9rem;
+    opacity: 0.75;
+    margin: 0;
+  }
+
+  .group-photo {
+    width: 100%;
+    aspect-ratio: 16 / 6;
+  }
+</style>
