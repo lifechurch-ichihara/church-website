@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/url';
+
 const navItems = [
   { label: 'Início', href: '/church-website' },
   { label: 'Sobre', href: '/about' },
@@ -22,7 +24,7 @@ const navItems = [
     <nav id="site-nav" class="site-nav">
       <ul>
         {navItems.map((item) => (
-          <li><a href={item.href}>{item.label}</a></li>
+          <li><a href={withBase(item.href)}>{item.label}</a></li>
         ))}
       </ul>
     </nav>

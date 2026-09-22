@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { withBase } from '../utils/url';
 
 const news = [
   { date: '10.09.2026', title: 'Culto especial de família no outono', href: '/news' },
@@ -31,7 +32,7 @@ const news = [
           <p class="summary-value">Chiba-ken, Ichihara-shi, 〇〇1-2-3</p>
         </div>
       </div>
-      <a href="/service">Ver detalhes dos cultos</a>
+      <a href={withBase('/service')}>Ver detalhes dos cultos</a>
     </div>
   </section>
 
@@ -52,7 +53,7 @@ const news = [
         Não é necessário se vestir formalmente. Crianças são muito bem-vindas.
         Saiba mais sobre como funciona o culto antes de visitar.
       </p>
-      <a href="/about" class="btn btn-outline">Saiba mais sobre a igreja</a>
+      <a href={withBase('/about')} class="btn btn-outline">Saiba mais sobre a igreja</a>
     </div>
   </section>
 
@@ -63,11 +64,11 @@ const news = [
         {news.map((item) => (
           <li>
             <span class="news-date">{item.date}</span>
-            <a href={item.href}>{item.title}</a>
+            <a href={withBase(item.href)}>{item.title}</a>
           </li>
         ))}
       </ul>
-      <a href="/news">Ver todas as notícias</a>
+      <a href={withBase('/news')}>Ver todas as notícias</a>
     </div>
   </section>
 
@@ -75,7 +76,7 @@ const news = [
     <div class="container">
       <h2>Como Chegar</h2>
       <p>Chiba-ken, Ichihara-shi, 〇〇1-2-3 (10 min a pé da estação mais próxima, estacionamento disponível)</p>
-      <a href="/access">Ver mapa e detalhes</a>
+      <a href={withBase('/access')}>Ver mapa e detalhes</a>
     </div>
   </section>
 </Layout>
